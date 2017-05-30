@@ -1,0 +1,116 @@
+#userProfile {
+    line-height: 4;
+}
+
+#loadingIndicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 100;
+}
+
+input.ng-invalid {
+    border-color: #B52E31;
+}
+
+.highlight-matched {
+    background-color: #FACD22;
+}
+.navbar-right {
+    margin-right: 10px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.btn-group > .btn:hover,
+.btn-group-vertical >
+.btn:hover,
+.btn-group >
+.btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.table {
+    margin-top: 10px;
+}
+
+label + div[role=alert] {
+    display: inline-block;
+}
+
+td omni-security {
+    margin-left: 5px;
+}
+
+.padded {
+  padding-top: 15px;
+  display: inline-block;
+}
+
+.omnicombo {
+  border: solid;
+  border-width: 1px;
+  border-color: darkgray;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: rgba(91, 91, 92, 0.09);
+  text-decoration-color: #5e5e5e;
+  color: darkgray;
+}
+
+.ibl {
+  display: inline-block;
+}
+
+.input-group .form-control {
+  float: none;
+}
+
+.omnicontainer {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+i + n {
+  padding-left: 5px;
+}
+
+i.glyphicon {
+  color: #6f96b7;
+}
+
+i + span {
+  color: #6f96b7;
+}
+
+fieldset {
+  border-style: solid;
+  border-width:  1px;
+  border-color: #ddd;
+  padding: 10px;
+}

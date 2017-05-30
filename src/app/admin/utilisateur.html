@@ -1,0 +1,127 @@
+
+
+
+<div ng-controller="UtilisateurController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="utilisateurForm">
+                <uib-tabset>
+            
+				<uib-tab heading="{{'utilisateur.informationOn' | translate}}">
+                            <div class="form-group">            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': utilisateurForm.$error.$dirty && utilisateurForm.login.$invalid}">
+						                            <label for="login" translate="utilisateur.login.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="utilisateurForm.login.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="login" name="login"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.utilisateur.login" placeholder="{{'utilisateur.login.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'utilisateur.login.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!utilisateurForm.login.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': utilisateurForm.$error.$dirty && utilisateurForm.nom.$invalid}">
+						                            <label for="nom" translate="utilisateur.nom.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="utilisateurForm.nom.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="nom" name="nom"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.utilisateur.nom" placeholder="{{'utilisateur.nom.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'utilisateur.nom.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!utilisateurForm.nom.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': utilisateurForm.$error.$dirty && utilisateurForm.prenom.$invalid}">
+						                            <label for="prenom" translate="utilisateur.prenom.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="utilisateurForm.prenom.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="prenom" name="prenom"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.utilisateur.prenom" placeholder="{{'utilisateur.prenom.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'utilisateur.prenom.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!utilisateurForm.prenom.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': utilisateurForm.$error.$dirty && utilisateurForm.mail.$invalid}">
+						                            <label for="mail" translate="utilisateur.mail.label"></label>
+						                            <input id="mail" name="mail"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.utilisateur.mail" placeholder="{{'utilisateur.mail.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'utilisateur.mail.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!utilisateurForm.mail.$touched">
+						
+						</div></div>
+
+
+
+
+
+            
+            				</div>
+            	</uib-tab>
+            
+		 		<uib-tab heading="{{'affectation.entityName' | translate}}s">
+                            <div class="form-group">
+                                <div ng-show="!ctrl.disable">
+
+			 					
+                                    <div class="input-group col-md-6"  ng-init="ctrl.loadFkRoleAffectations()">
+                                        <label for="refFkRole" translate>affectation.refFkRole.label</label>
+                                        <select class="form-control" id="refFkRole" ng-model="ctrl.affectation.refFkRole"
+                                                ng-options="item as item.libelleRole for item in ctrl.fkRoleAffectations track by item.id" ng-disabled="ctrl.disable">
+                                        </select>
+                                    </div>
+                                    <div class="input-group col-md-6"  ng-init="ctrl.loadUorgAffectations()">
+                                        <label for="refUorg" translate>affectation.refUorg.label</label>
+                                        <select class="form-control" id="refUorg" ng-model="ctrl.affectation.refUorg"
+                                                ng-options="item as item.nom for item in ctrl.uorgAffectations track by item.id" ng-disabled="ctrl.disable">
+                                        </select>
+                                    </div>
+
+                                    <button class="btn btn-primary" ng-show="!ctrl.disable" ng-click="ctrl.addAffectation(ctrl.affectation)" translate>button.add</button>
+                                    <button class="btn btn-default" ng-show="!ctrl.disable" ng-click="ctrl.clearAffectation()" translate>button.new</button>
+                                </div>
+                                <table class="table" ng-show="typeof(ctrl.utilisateur.refsAffectation) != 'undefined' && ctrl.utilisateur.refsAffectation != null && ctrl.utilisateur.refsAffectation.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <th translate>affectation.traceToken.label</th>
+                                            <th translate>affectation.refFkRole.label</th>
+                                            <th translate>affectation.refUorg.label</th>
+                                            <th ng-show="!ctrl.disable" translate>button.delete</th>
+                                            <th ng-show="ctrl.mode == 'edit'" translate>button.edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="x in ctrl.utilisateur.refsAffectation track by ctrl.affectationTracker(x)">
+                                            <td>{{x.traceToken}}</td>
+                                            <td>{{x.refFkRole.libelleRole}}</td>
+                                            <td>{{x.refUorg.nom}}</td>
+                                            <td ng-show="!ctrl.disable"><span class="glyphicon glyphicon-remove" ng-click="ctrl.removeAffectation(x)"></span></td>
+                                            <td ng-show="ctrl.mode == 'edit'"><span class="glyphicon glyphicon-pencil" ng-click="ctrl.editAffectation(x)"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+				</uib-tab>
+            
+                </uib-tabset>
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1046"><button ng-disabled="utilisateurForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.utilisateur)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1046"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1047"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.utilisateur.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1049"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.utilisateur.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1048"><button ng-disabled="utilisateurForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.utilisateur)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1050"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.utilisateur.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

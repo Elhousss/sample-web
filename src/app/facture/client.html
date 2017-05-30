@@ -1,0 +1,48 @@
+
+
+
+<div ng-controller="ClientController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="clientForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': clientForm.$error.$dirty && clientForm.nomClient.$invalid}">
+						                            <label for="nomClient" translate="client.nomClient.label"></label>
+						                            <input id="nomClient" name="nomClient"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.client.nomClient" placeholder="{{'client.nomClient.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'client.nomClient.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!clientForm.nomClient.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': clientForm.$error.$dirty && clientForm.adresseClient.$invalid}">
+						                            <label for="adresseClient" translate="client.adresseClient.label"></label>
+						                            <input id="adresseClient" name="adresseClient"  class="form-control col-md-6" type="text"
+						                                ng-model="ctrl.client.adresseClient" placeholder="{{'client.adresseClient.placeholder' | translate}}" ng-disabled="ctrl.disable"  >
+						
+						</div></div>
+
+
+
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1004"><button ng-disabled="clientForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.client)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1004"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1005"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.client.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1007"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.client.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1006"><button ng-disabled="clientForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.client)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1008"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.client.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

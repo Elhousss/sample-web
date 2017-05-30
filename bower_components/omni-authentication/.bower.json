@@ -1,0 +1,17 @@
+{
+  "name": "auth",
+  "main": [
+    "auth.module.js",
+    "authentication-provider.js",
+    "authorization-service.js"
+  ],
+  "_release": "3c966186e4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3c966186e451e93457ef553a952f0d185c07efc6"
+  },
+  "_source": "http://10.10.1.170:10080/asebban/omni-authentication.git",
+  "_target": "*",
+  "_originalSource": "http://10.10.1.170:10080/asebban/omni-authentication.git"
+}

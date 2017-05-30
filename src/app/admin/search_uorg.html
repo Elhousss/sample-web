@@ -1,0 +1,65 @@
+
+
+<div ng-controller="UorgController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="nom" name="nom" class="form-control col-md-6" type="text" ng-model="ctrl.uorg.nom" placeholder="{{'uorg.nom.placeholder' | translate}}">
+<input id="nomAbrege" name="nomAbrege" class="form-control col-md-6" type="text" ng-model="ctrl.uorg.nomAbrege" placeholder="{{'uorg.nomAbrege.placeholder' | translate}}">
+<input id="timbre" name="timbre" class="form-control col-md-6" type="text" ng-model="ctrl.uorg.timbre" placeholder="{{'uorg.timbre.placeholder' | translate}}">
+<input id="dateDebutEffet" name="dateDebutEffet" class="form-control col-md-6" type="date" ng-model="ctrl.uorg.dateDebutEffet" placeholder="{{'uorg.dateDebutEffet.placeholder' | translate}}">
+<input id="dateFinEffet" name="dateFinEffet" class="form-control col-md-6" type="date" ng-model="ctrl.uorg.dateFinEffet" placeholder="{{'uorg.dateFinEffet.placeholder' | translate}}">
+<input id="email" name="email" class="form-control col-md-6" type="text" ng-model="ctrl.uorg.email" placeholder="{{'uorg.email.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.uorg.traceToken" placeholder="{{'uorg.traceToken.placeholder' | translate}}">
+<select class="form-control" id="refParent" ng-model="ctrl.uorg.refParent"
+        ng-options="item as item.nom for item in ctrl.parents track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+
+
+<omni-security secured-by="1076"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.uorg)" translate>button.search</button></omni-security>
+<omni-security secured-by="1078"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/uorg/add_uorg" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>uorg.nom.abreviation</th>
+                    <th translate>uorg.nomAbrege.abreviation</th>
+                    <th translate>uorg.timbre.abreviation</th>
+                    <th translate>uorg.dateDebutEffet.abreviation</th>
+                    <th translate>uorg.dateFinEffet.abreviation</th>
+                    <th translate>uorg.email.abreviation</th>
+                    <th translate>uorg.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.uorgs" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.nom}}</td>
+                <td>{{x.nomAbrege}}</td>
+                <td>{{x.timbre}}</td>
+                <td>{{x.dateDebutEffet | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.dateFinEffet | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1077"><a href="#/pages/admin/uorg/detail_uorg/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1079"><a href="#/pages/admin/uorg/edit_uorg/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1081"><a href="#/pages/admin/uorg/delete_uorg/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

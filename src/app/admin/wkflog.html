@@ -1,0 +1,123 @@
+
+
+
+<div ng-controller="WkflogController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="wkflogForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': wkflogForm.$error.$dirty && wkflogForm.previousStateNode.$invalid}">
+						                            <label for="previousStateNode" translate="wkflog.previousStateNode.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="wkflogForm.previousStateNode.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="previousStateNode" name="previousStateNode"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.wkflog.previousStateNode" placeholder="{{'wkflog.previousStateNode.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'wkflog.previousStateNode.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!wkflogForm.previousStateNode.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': wkflogForm.$error.$dirty && wkflogForm.currentStateNode.$invalid}">
+						                            <label for="currentStateNode" translate="wkflog.currentStateNode.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="wkflogForm.currentStateNode.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="currentStateNode" name="currentStateNode"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.wkflog.currentStateNode" placeholder="{{'wkflog.currentStateNode.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'wkflog.currentStateNode.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!wkflogForm.currentStateNode.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': wkflogForm.$error.$dirty && wkflogForm.instanceIdentifier.$invalid}">
+						                            <label for="instanceIdentifier" translate="wkflog.instanceIdentifier.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="wkflogForm.instanceIdentifier.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="instanceIdentifier" name="instanceIdentifier"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.wkflog.instanceIdentifier" placeholder="{{'wkflog.instanceIdentifier.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'wkflog.instanceIdentifier.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!wkflogForm.instanceIdentifier.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<label translate>wkflog.today.label</label>
+  <input ng-model="ctrl.wkflog.today" is-open="ctrl.todayOpened" placeholder="{{'wkflog.today.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="true" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openToday()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': wkflogForm.$error.$dirty && wkflogForm.processName.$invalid}">
+						                            <label for="processName" translate="wkflog.processName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="wkflogForm.processName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="processName" name="processName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.wkflog.processName" placeholder="{{'wkflog.processName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'wkflog.processName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!wkflogForm.processName.$touched">
+						
+						</div></div>
+
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refUorg" translate>wkflog.refUorg.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refUorg" ng-model="ctrl.wkflog.refUorg"
+                                    ng-options="item as item.nom for item in ctrl.uorgs track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.wkflog.refUorg.nom}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="wkflog.Form.refUorg.$error" ng-show="wkflog.Form.refUorg.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refUser" translate>wkflog.refUser.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refUser" ng-model="ctrl.wkflog.refUser"
+                                    ng-options="item as item.login for item in ctrl.users track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.wkflog.refUser.login}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="wkflog.Form.refUser.$error" ng-show="wkflog.Form.refUser.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1138"><button ng-disabled="wkflogForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.wkflog)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1138"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1139"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.wkflog.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1141"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.wkflog.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1140"><button ng-disabled="wkflogForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.wkflog)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1142"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.wkflog.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

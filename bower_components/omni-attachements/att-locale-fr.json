@@ -1,0 +1,10 @@
+{
+  "messages" : {
+    "downloadYourAttachementsMessage" : "Téléchargez vos pièces jointes",
+    "attachYourAttachementsMessage" : "Envoyez vos pièces jointes"
+  },
+  "app": {
+    "name" : "Name",
+    "firstName": "First name"
+  }
+}

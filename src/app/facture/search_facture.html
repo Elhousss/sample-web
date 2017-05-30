@@ -1,0 +1,77 @@
+
+
+<div ng-controller="FactureController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="numeroFacture" name="numeroFacture" class="form-control col-md-6" type="text" ng-model="ctrl.facture.numeroFacture" placeholder="{{'facture.numeroFacture.placeholder' | translate}}">
+<input id="libelleFacture" name="libelleFacture" class="form-control col-md-6" type="text" ng-model="ctrl.facture.libelleFacture" placeholder="{{'facture.libelleFacture.placeholder' | translate}}">
+<input id="dateFacture" name="dateFacture" class="form-control col-md-6" type="date" ng-model="ctrl.facture.dateFacture" placeholder="{{'facture.dateFacture.placeholder' | translate}}">
+<input id="dateEmissionFacture" name="dateEmissionFacture" class="form-control col-md-6" type="date" ng-model="ctrl.facture.dateEmissionFacture" placeholder="{{'facture.dateEmissionFacture.placeholder' | translate}}">
+<input id="dateLastUpdate" name="dateLastUpdate" class="form-control col-md-6" type="date" ng-model="ctrl.facture.dateLastUpdate" placeholder="{{'facture.dateLastUpdate.placeholder' | translate}}">
+<input id="dateEcheance" name="dateEcheance" class="form-control col-md-6" type="date" ng-model="ctrl.facture.dateEcheance" placeholder="{{'facture.dateEcheance.placeholder' | translate}}">
+<input id="montantFacture" name="montantFacture" class="form-control col-md-6" type="number" ng-model="ctrl.facture.montantFacture" placeholder="{{'facture.montantFacture.placeholder' | translate}}">
+<input id="datePaiement" name="datePaiement" class="form-control col-md-6" type="date" ng-model="ctrl.facture.datePaiement" placeholder="{{'facture.datePaiement.placeholder' | translate}}">
+<input id="proformat" name="proformat" class="form-control col-md-6" type="checkbox" ng-model="ctrl.facture.proformat" placeholder="{{'facture.proformat.placeholder' | translate}}">
+<select class="form-control" id="refClient" ng-model="ctrl.facture.refClient"
+        ng-options="item as item.nomClient for item in ctrl.clients track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+<select class="form-control" id="refLivrable" ng-model="ctrl.facture.refLivrable"
+        ng-options="item as item.nomLivrable for item in ctrl.livrables track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+
+
+<omni-security secured-by="1012"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.facture)" translate>button.search</button></omni-security>
+<omni-security secured-by="1014"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/facture/facture/add_facture" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>facture.numeroFacture.abreviation</th>
+                    <th translate>facture.libelleFacture.abreviation</th>
+                    <th translate>facture.dateFacture.abreviation</th>
+                    <th translate>facture.dateEmissionFacture.abreviation</th>
+                    <th translate>facture.dateLastUpdate.abreviation</th>
+                    <th translate>facture.dateEcheance.abreviation</th>
+                    <th translate>facture.montantFacture.abreviation</th>
+                    <th translate>facture.datePaiement.abreviation</th>
+                    <th translate>facture.proformat.abreviation</th>
+                    <th translate>misc.state</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.factures" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.numeroFacture}}</td>
+                <td>{{x.libelleFacture}}</td>
+                <td>{{x.dateFacture | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.dateEmissionFacture | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.dateLastUpdate | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.dateEcheance | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.montantFacture}}</td>
+                <td>{{x.datePaiement | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.proformat}}</td>
+                <td>{{x.workflowState}}</td>
+                <td>
+                    <omni-security secured-by="1013"><a href="#/pages/facture/facture/detail_facture/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1015"><a href="#/pages/facture/facture/edit_facture/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1017"><a href="#/pages/facture/facture/delete_facture/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

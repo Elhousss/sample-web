@@ -1,0 +1,53 @@
+
+
+
+<div ng-controller="LinkNatureController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="linkNatureForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkNatureForm.$error.$dirty && linkNatureForm.code.$invalid}">
+						                            <label for="code" translate="linkNature.code.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkNatureForm.code.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="code" name="code"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.linkNature.code" placeholder="{{'linkNature.code.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'linkNature.code.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkNatureForm.code.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkNatureForm.$error.$dirty && linkNatureForm.name.$invalid}">
+						                            <label for="name" translate="linkNature.name.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkNatureForm.name.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="name" name="name"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.linkNature.name" placeholder="{{'linkNature.name.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'linkNature.name.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkNatureForm.name.$touched">
+						
+						</div></div>
+
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1128"><button ng-disabled="linkNatureForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.linkNature)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1128"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1129"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.linkNature.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1131"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.linkNature.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1130"><button ng-disabled="linkNatureForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.linkNature)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1132"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.linkNature.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

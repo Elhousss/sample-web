@@ -1,0 +1,11 @@
+.workflowState {
+  background-color: rgb(177, 184, 224);
+  text-align: center;
+  font-family: Cambria;
+  font-weight: bold;
+}
+
+.workflowTransitions {
+  background-color: rgb(177, 184, 224);
+  text-align: center;
+}

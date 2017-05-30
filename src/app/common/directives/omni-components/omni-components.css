@@ -1,0 +1,120 @@
+.glyphicon-warning-sign + div {
+    display: inline-block;
+    border-style : none;
+}
+
+.glyphicon-thumbs-up + div {
+    display: inline-block;
+    border-style : none;
+}
+
+.glyphicon-ban-circle + div {
+    display: inline-block;
+    border-style : none;
+}
+
+.error {
+    color: red;
+}
+
+.warning {
+    color: chocolate;
+}
+
+.info {
+    color : darkgreen;
+}
+
+/* styles for progress directive */
+
+.box {
+    border-style: solid;
+    width: 120px;
+    height: 30px;
+    display: block;
+}
+
+.progress-bar-physical {
+    border-style: none;
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.progress-bar-declared {
+    border-style: none;
+    width: 100px;
+    height: 20px;
+    background-color: forestgreen;
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.progress-bar-effort-based {
+    border-style: none;
+    width: 100px;
+    height: 20px;
+    background-color: chocolate;
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+#bar > span {
+    border-style: none;
+    font-size: 10px;
+    color: azure;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.workflowState {
+    background-color: rgb(177, 184, 224);
+    text-align: center;
+    font-family: Cambria;
+    font-weight: bold;
+}
+
+.workflowTransitions {
+    background-color: rgb(177, 184, 224);
+    text-align: center;
+}
+
+.attachement {
+    display: inline-block;
+}
+
+.popover-content {
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    color: black;
+}
+
+.progress {
+    margin-top: 10px;
+}
+
+.popover.in {
+    max-width: none;
+}
+
+.popover-title {
+    color: black;
+    font-weight: bold;
+}
+
+table.table tr:hover {
+    background-color: rgba(91, 91, 92, 0.11);
+}

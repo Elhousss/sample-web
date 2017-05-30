@@ -1,0 +1,112 @@
+
+
+
+<div ng-controller="LinkInstanceController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="linkInstanceForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkInstanceForm.$error.$dirty && linkInstanceForm.destClassName.$invalid}">
+						                            <label for="destClassName" translate="linkInstance.destClassName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkInstanceForm.destClassName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="destClassName" name="destClassName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.linkInstance.destClassName" placeholder="{{'linkInstance.destClassName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'linkInstance.destClassName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkInstanceForm.destClassName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div class="form-group" ng-class="{'has-error': linkInstanceForm.idDest.$dirty && linkInstanceForm.idDest.$invalid}">
+                            <label for="idDest" translate>linkInstance.idDest.label</label>
+                            <div role="alert">
+                                <span class="error" ng-show="linkInstanceForm.idDest.$error.required" style="display: inline-block ">*</span>
+                            </div>
+                            <input id="idDest" name="idDest" class="form-control col-md-6"
+                                uib-tooltip="{{'linkInstance.idDest.tooltip' | translate}}"
+                                tooltip-placement="top"
+                                tooltip-trigger="mouseenter"
+                                tooltip-enable="!linkInstanceForm.idDest.$touched"
+                                type="number" ng-model="ctrl.linkInstance.idDest" placeholder="{{'linkInstance.idDest.placeholder' | translate}}"
+                                ng-disabled="ctrl.disable"  required>
+                            <div ng-messages="linkInstanceForm.idDest.$error" ng-show="linkInstanceForm.idDest.$touched">
+                                <div ng-messages-include="app/common/messages/messages.html"></div>
+                            </div>
+                        </div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkInstanceForm.$error.$dirty && linkInstanceForm.sourceClassName.$invalid}">
+						                            <label for="sourceClassName" translate="linkInstance.sourceClassName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkInstanceForm.sourceClassName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="sourceClassName" name="sourceClassName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.linkInstance.sourceClassName" placeholder="{{'linkInstance.sourceClassName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'linkInstance.sourceClassName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkInstanceForm.sourceClassName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div class="form-group" ng-class="{'has-error': linkInstanceForm.idSource.$dirty && linkInstanceForm.idSource.$invalid}">
+                            <label for="idSource" translate>linkInstance.idSource.label</label>
+                            <div role="alert">
+                                <span class="error" ng-show="linkInstanceForm.idSource.$error.required" style="display: inline-block ">*</span>
+                            </div>
+                            <input id="idSource" name="idSource" class="form-control col-md-6"
+                                uib-tooltip="{{'linkInstance.idSource.tooltip' | translate}}"
+                                tooltip-placement="top"
+                                tooltip-trigger="mouseenter"
+                                tooltip-enable="!linkInstanceForm.idSource.$touched"
+                                type="number" ng-model="ctrl.linkInstance.idSource" placeholder="{{'linkInstance.idSource.placeholder' | translate}}"
+                                ng-disabled="ctrl.disable"  required>
+                            <div ng-messages="linkInstanceForm.idSource.$error" ng-show="linkInstanceForm.idSource.$touched">
+                                <div ng-messages-include="app/common/messages/messages.html"></div>
+                            </div>
+                        </div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<input type="checkbox" name="valide" id="valide" ng-model="ctrl.linkInstance.valide" ng-disabled="ctrl.disable" translate="linkInstance.valide.label"><label for="valide" translate>linkInstance.valide.label</label>
+</div>
+
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refLnkType" translate>linkInstance.refLnkType.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refLnkType" ng-model="ctrl.linkInstance.refLnkType"
+                                    ng-options="item as item.id for item in ctrl.lnkTypes track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.linkInstance.refLnkType.id}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="linkInstance.Form.refLnkType.$error" ng-show="linkInstance.Form.refLnkType.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1118"><button ng-disabled="linkInstanceForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.linkInstance)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1118"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1119"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.linkInstance.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1121"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.linkInstance.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1120"><button ng-disabled="linkInstanceForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.linkInstance)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1122"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.linkInstance.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

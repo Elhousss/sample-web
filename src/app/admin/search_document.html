@@ -1,0 +1,90 @@
+
+
+<div ng-controller="DocumentController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="code" name="code" class="form-control col-md-6" type="text" ng-model="ctrl.document.code" placeholder="{{'document.code.placeholder' | translate}}">
+<input id="nom" name="nom" class="form-control col-md-6" type="text" ng-model="ctrl.document.nom" placeholder="{{'document.nom.placeholder' | translate}}">
+<input id="criteria" name="criteria" class="form-control col-md-6" type="text" ng-model="ctrl.document.criteria" placeholder="{{'document.criteria.placeholder' | translate}}">
+<input id="type" name="type" class="form-control col-md-6" type="text" ng-model="ctrl.document.type" placeholder="{{'document.type.placeholder' | translate}}">
+<input id="mime" name="mime" class="form-control col-md-6" type="text" ng-model="ctrl.document.mime" placeholder="{{'document.mime.placeholder' | translate}}">
+<input id="sizeMin" name="sizeMin" class="form-control col-md-6" type="number" ng-model="ctrl.document.sizeMin" placeholder="{{'document.sizeMin.placeholder' | translate}}">
+<input id="sizeMax" name="sizeMax" class="form-control col-md-6" type="number" ng-model="ctrl.document.sizeMax" placeholder="{{'document.sizeMax.placeholder' | translate}}">
+<input id="idEntity" name="idEntity" class="form-control col-md-6" type="number" ng-model="ctrl.document.idEntity" placeholder="{{'document.idEntity.placeholder' | translate}}">
+<input id="className" name="className" class="form-control col-md-6" type="text" ng-model="ctrl.document.className" placeholder="{{'document.className.placeholder' | translate}}">
+<input id="fileName" name="fileName" class="form-control col-md-6" type="text" ng-model="ctrl.document.fileName" placeholder="{{'document.fileName.placeholder' | translate}}">
+<input id="filePath" name="filePath" class="form-control col-md-6" type="text" ng-model="ctrl.document.filePath" placeholder="{{'document.filePath.placeholder' | translate}}">
+<input id="fileExtension" name="fileExtension" class="form-control col-md-6" type="text" ng-model="ctrl.document.fileExtension" placeholder="{{'document.fileExtension.placeholder' | translate}}">
+<input id="dateAttachement" name="dateAttachement" class="form-control col-md-6" type="date" ng-model="ctrl.document.dateAttachement" placeholder="{{'document.dateAttachement.placeholder' | translate}}">
+<input id="mandatory" name="mandatory" class="form-control col-md-6" type="checkbox" ng-model="ctrl.document.mandatory" placeholder="{{'document.mandatory.placeholder' | translate}}">
+<input id="provided" name="provided" class="form-control col-md-6" type="checkbox" ng-model="ctrl.document.provided" placeholder="{{'document.provided.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.document.traceToken" placeholder="{{'document.traceToken.placeholder' | translate}}">
+
+
+<omni-security secured-by="1146"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.document)" translate>button.search</button></omni-security>
+<omni-security secured-by="1148"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/document/add_document" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>document.code.abreviation</th>
+                    <th translate>document.nom.abreviation</th>
+                    <th translate>document.criteria.abreviation</th>
+                    <th translate>document.type.abreviation</th>
+                    <th translate>document.mime.abreviation</th>
+                    <th translate>document.sizeMin.abreviation</th>
+                    <th translate>document.sizeMax.abreviation</th>
+                    <th translate>document.idEntity.abreviation</th>
+                    <th translate>document.className.abreviation</th>
+                    <th translate>document.fileName.abreviation</th>
+                    <th translate>document.filePath.abreviation</th>
+                    <th translate>document.fileExtension.abreviation</th>
+                    <th translate>document.codeAttachements.abreviation</th>
+                    <th translate>document.dateAttachement.abreviation</th>
+                    <th translate>document.mandatory.abreviation</th>
+                    <th translate>document.provided.abreviation</th>
+                    <th translate>document.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.documents" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.code}}</td>
+                <td>{{x.nom}}</td>
+                <td>{{x.criteria}}</td>
+                <td>{{x.type}}</td>
+                <td>{{x.mime}}</td>
+                <td>{{x.sizeMin}}</td>
+                <td>{{x.sizeMax}}</td>
+                <td>{{x.idEntity}}</td>
+                <td>{{x.className}}</td>
+                <td>{{x.fileName}}</td>
+                <td>{{x.filePath}}</td>
+                <td>{{x.fileExtension}}</td>
+                <td>{{x.codeAttachements}}</td>
+                <td>{{x.dateAttachement | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.mandatory}}</td>
+                <td>{{x.provided}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1147"><a href="#/pages/admin/document/detail_document/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1149"><a href="#/pages/admin/document/edit_document/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1151"><a href="#/pages/admin/document/delete_document/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

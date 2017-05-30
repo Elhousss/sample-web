@@ -1,0 +1,49 @@
+
+
+<div ng-controller="LinkNatureController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="code" name="code" class="form-control col-md-6" type="text" ng-model="ctrl.linkNature.code" placeholder="{{'linkNature.code.placeholder' | translate}}">
+<input id="name" name="name" class="form-control col-md-6" type="text" ng-model="ctrl.linkNature.name" placeholder="{{'linkNature.name.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.linkNature.traceToken" placeholder="{{'linkNature.traceToken.placeholder' | translate}}">
+
+
+<omni-security secured-by="1126"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.linkNature)" translate>button.search</button></omni-security>
+<omni-security secured-by="1128"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/linkNature/add_linkNature" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>linkNature.code.abreviation</th>
+                    <th translate>linkNature.name.abreviation</th>
+                    <th translate>linkNature.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.linkNatures" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.code}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1127"><a href="#/pages/admin/linkNature/detail_linkNature/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1129"><a href="#/pages/admin/linkNature/edit_linkNature/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1131"><a href="#/pages/admin/linkNature/delete_linkNature/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

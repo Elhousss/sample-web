@@ -1,0 +1,46 @@
+
+
+<div ng-controller="ClientController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="nomClient" name="nomClient" class="form-control col-md-6" type="text" ng-model="ctrl.client.nomClient" placeholder="{{'client.nomClient.placeholder' | translate}}">
+<input id="adresseClient" name="adresseClient" class="form-control col-md-6" type="text" ng-model="ctrl.client.adresseClient" placeholder="{{'client.adresseClient.placeholder' | translate}}">
+
+
+<omni-security secured-by="1002"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.client)" translate>button.search</button></omni-security>
+<omni-security secured-by="1004"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/facture/client/add_client" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>client.nomClient.abreviation</th>
+                    <th translate>client.adresseClient.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.clients" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.nomClient}}</td>
+                <td>{{x.adresseClient}}</td>
+                <td>
+                    <omni-security secured-by="1003"><a href="#/pages/facture/client/detail_client/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1005"><a href="#/pages/facture/client/edit_client/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1007"><a href="#/pages/facture/client/delete_client/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

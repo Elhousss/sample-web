@@ -1,0 +1,50 @@
+
+
+<div ng-controller="AttachementInstanceController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="dateAttachement" name="dateAttachement" class="form-control col-md-6" type="date" ng-model="ctrl.attachementInstance.dateAttachement" placeholder="{{'attachementInstance.dateAttachement.placeholder' | translate}}">
+<input id="mandatory" name="mandatory" class="form-control col-md-6" type="checkbox" ng-model="ctrl.attachementInstance.mandatory" placeholder="{{'attachementInstance.mandatory.placeholder' | translate}}">
+<input id="provided" name="provided" class="form-control col-md-6" type="checkbox" ng-model="ctrl.attachementInstance.provided" placeholder="{{'attachementInstance.provided.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.attachementInstance.traceToken" placeholder="{{'attachementInstance.traceToken.placeholder' | translate}}">
+
+
+<omni-security secured-by="1156"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.attachementInstance)" translate>button.search</button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>attachementInstance.codeAttachements.abreviation</th>
+                    <th translate>attachementInstance.dateAttachement.abreviation</th>
+                    <th translate>attachementInstance.mandatory.abreviation</th>
+                    <th translate>attachementInstance.provided.abreviation</th>
+                    <th translate>attachementInstance.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.attachementInstances" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.codeAttachements}}</td>
+                <td>{{x.dateAttachement | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.mandatory}}</td>
+                <td>{{x.provided}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

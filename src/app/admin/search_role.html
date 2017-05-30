@@ -1,0 +1,47 @@
+
+<div ng-controller="RoleController" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="codeRole" name="codeRole" class="form-control col-md-6" type="text" ng-model="role.codeRole" placeholder="{{'role.codeRole.placeholder' | translate}}">
+<input id="libelleRole" name="libelleRole" class="form-control col-md-6" type="text" ng-model="role.libelleRole" placeholder="{{'role.libelleRole.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="role.traceToken" placeholder="{{'role.traceToken.placeholder' | translate}}">
+
+
+<omni-security secured-by="1066"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="search(role)" translate>button.search</button></omni-security>
+<omni-security secured-by="1068"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/role/add_role" translate>button.add</a></button></omni-security>
+
+    <div ng-if="searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="count" ng-model="currentPage" num-pages="npages" ng-change="searchPageChanged(currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>role.codeRole.label</th>
+                    <th translate>role.libelleRole.label</th>
+                    <th translate>role.traceToken.label</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in roles" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.codeRole}}</td>
+                <td>{{x.libelleRole}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1067"><a href="#/pages/admin/role/detail_role/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1069"><a href="#/pages/admin/role/edit_role/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1071"><a href="#/pages/admin/role/delete_role/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="count" ng-model="currentPage" num-pages="npages" ng-change="searchPageChanged(currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>

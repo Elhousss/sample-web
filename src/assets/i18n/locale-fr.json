@@ -1,0 +1,811 @@
+{
+  "connection": {
+    "login": {
+      "placeholder": "Login",
+      "tooltip": "Saisissez votre login",
+      "label": "Login"
+    },
+    "password": {
+      "placeholder": "Mot de passe",
+      "tooltip": "Saisissez ici votre mot de passe",
+      "label": "Mot de passe"
+    },
+    "role": {
+      "placeholder": "Sélectionnez votre role",
+      "tooltip": "Sélectionnez ici votre role",
+      "label": "Role"
+    }
+  },
+  
+    "client" : {
+      "entityName": "Client",
+      "nomClient" : {
+        "placeholder" : "Saisissez ici Nom du client",
+        "tooltip" : "Saisissez ici Nom du client",
+        "label":"Nom du client",
+        "abreviation" : "Nom du client"
+      },
+      "adresseClient" : {
+        "placeholder" : "Saisissez ici Adresse du client",
+        "tooltip" : "Saisissez ici Adresse du client",
+        "label":"Adresse du client",
+        "abreviation" : "Adresse du client"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici traceToken",
+        "tooltip" : "Saisissez ici traceToken",
+        "label":"traceToken",
+        "abreviation" : "traceToken"
+      },
+      "refUtilisateurCreation" : {
+        "placeholder" : "Saisissez ici user",
+        "tooltip" : "Saisissez ici user",
+        "label":"user",
+        "abreviation" : "user"
+      },
+      "refUorgCreation" : {
+        "placeholder" : "Saisissez ici uorg",
+        "tooltip" : "Saisissez ici uorg",
+        "label":"uorg",
+        "abreviation" : "uorg"
+      },
+      "informationOn" : "Information sur Client"
+  },
+  "livrable" : {
+      "entityName": "Livrable",
+      "nomLivrable" : {
+        "placeholder" : "Nom du livrable à nommer ici",
+        "tooltip" : "Nom du livrable à nommer ici",
+        "label":"Nom du livrable",
+        "abreviation" : "Nom du livrable"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici traceToken",
+        "tooltip" : "Saisissez ici traceToken",
+        "label":"traceToken",
+        "abreviation" : "traceToken"
+      },
+      "informationOn" : "Information sur Livrable"
+  },
+  "ligneFacture" : {
+      "entityName": "LigneFacture",
+      "description" : {
+        "placeholder" : "Saisissez ici Description",
+        "tooltip" : "Saisissez ici Description",
+        "label":"Description",
+        "abreviation" : "Description"
+      },
+      "quantite" : {
+        "placeholder" : "Saisissez ici Quantité",
+        "tooltip" : "Saisissez ici Quantité",
+        "label":"Quantité",
+        "abreviation" : "Quantité"
+      },
+      "montant" : {
+        "placeholder" : "Saisissez ici Montant",
+        "tooltip" : "Saisissez ici Montant",
+        "label":"Montant",
+        "abreviation" : "Montant"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici traceToken",
+        "tooltip" : "Saisissez ici traceToken",
+        "label":"traceToken",
+        "abreviation" : "traceToken"
+      },
+      "informationOn" : "Information sur LigneFacture"
+  },
+  "facture" : {
+      "entityName": "Facture",
+      "numeroFacture" : {
+        "placeholder" : "Saisissez ici Numéro de la facture",
+        "tooltip" : "Saisissez ici Numéro de la facture",
+        "label":"Numéro de la facture",
+        "abreviation" : "Numéro de la facture"
+      },
+      "libelleFacture" : {
+        "placeholder" : "Saisissez ici Libellé de la facture",
+        "tooltip" : "Saisissez ici Libellé de la facture",
+        "label":"Libellé de la facture",
+        "abreviation" : "Libellé de la facture"
+      },
+      "dateFacture" : {
+        "placeholder" : "Saisissez ici Date de la facture",
+        "tooltip" : "Saisissez ici Date de la facture",
+        "label":"Date de la facture",
+        "abreviation" : "Date de la facture"
+      },
+      "dateEmissionFacture" : {
+        "placeholder" : "Saisissez ici Date d'émission",
+        "tooltip" : "Saisissez ici Date d'émission",
+        "label":"Date d'émission",
+        "abreviation" : "Date d'émission"
+      },
+      "dateLastUpdate" : {
+        "placeholder" : "Saisissez ici Date de dernière mise à jour",
+        "tooltip" : "Saisissez ici Date de dernière mise à jour",
+        "label":"Date de dernière mise à jour",
+        "abreviation" : "Date de dernière mise à jour"
+      },
+      "dateEcheance" : {
+        "placeholder" : "Saisissez ici Date d'échéance",
+        "tooltip" : "Saisissez ici Date d'échéance",
+        "label":"Date d'échéance",
+        "abreviation" : "Date d'échéance"
+      },
+      "montantFacture" : {
+        "placeholder" : "Saisissez ici Montant de la facture",
+        "tooltip" : "Saisissez ici Montant de la facture",
+        "label":"Montant de la facture",
+        "abreviation" : "Montant de la facture"
+      },
+      "datePaiement" : {
+        "placeholder" : "Saisissez ici Date de paiement",
+        "tooltip" : "Saisissez ici Date de paiement",
+        "label":"Date de paiement",
+        "abreviation" : "Date de paiement"
+      },
+      "proformat" : {
+        "placeholder" : "Saisissez ici Facture proformat ?",
+        "tooltip" : "Saisissez ici Facture proformat ?",
+        "label":"Facture proformat ?",
+        "abreviation" : "Facture proformat ?"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici traceToken",
+        "tooltip" : "Saisissez ici traceToken",
+        "label":"traceToken",
+        "abreviation" : "traceToken"
+      },
+      "refClient" : {
+        "placeholder" : "Saisissez ici Client",
+        "tooltip" : "Saisissez ici Client",
+        "label":"Client",
+        "abreviation" : "Client"
+      },
+      "refsLivrable" : {
+        "placeholder" : "Saisissez ici Livrable",
+        "tooltip" : "Saisissez ici Livrable",
+        "label":"Livrable",
+        "abreviation" : "Livrable"
+      },
+      "refUtilisateurCreation" : {
+        "placeholder" : "Saisissez ici user",
+        "tooltip" : "Saisissez ici user",
+        "label":"user",
+        "abreviation" : "user"
+      },
+      "refUorgCreation" : {
+        "placeholder" : "Saisissez ici uorg",
+        "tooltip" : "Saisissez ici uorg",
+        "label":"uorg",
+        "abreviation" : "uorg"
+      },
+      "informationOn" : "Information sur Facture"
+  },
+  "link" : {
+      "entityName": "Lien",
+      "code" : {
+        "placeholder" : "Saisissez ici code",
+        "tooltip" : "Saisissez ici code",
+        "label":"code",
+        "abreviation" : "code"
+      },
+      "name" : {
+        "placeholder" : "Saisissez ici nom",
+        "tooltip" : "Saisissez ici nom",
+        "label":"nom",
+        "abreviation" : "nom"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "informationOn" : "Information sur Lien"
+  },
+  "uorg" : {
+      "entityName": "Unite Organisationnelle",
+      "nom" : {
+        "placeholder" : "Saisissez ici Nom",
+        "tooltip" : "Saisissez ici Nom",
+        "label":"Nom",
+        "abreviation" : "Nom"
+      },
+      "nomAbrege" : {
+        "placeholder" : "Saisissez ici Nom Abreg�",
+        "tooltip" : "Saisissez ici Nom Abreg�",
+        "label":"Nom Abreg�",
+        "abreviation" : "Nom Abreg�"
+      },
+      "timbre" : {
+        "placeholder" : "Saisissez ici timbre",
+        "tooltip" : "Saisissez ici timbre",
+        "label":"timbre",
+        "abreviation" : "timbre"
+      },
+      "dateDebutEffet" : {
+        "placeholder" : "Saisissez ici Date début effet",
+        "tooltip" : "Saisissez ici Date début effet",
+        "label":"Date début effet",
+        "abreviation" : "Date début effet"
+      },
+      "dateFinEffet" : {
+        "placeholder" : "Saisissez ici Date fin effet",
+        "tooltip" : "Saisissez ici Date fin effet",
+        "label":"Date fin effet",
+        "abreviation" : "Date fin effet"
+      },
+      "email" : {
+        "placeholder" : "Saisissez ici EMail",
+        "tooltip" : "Saisissez ici EMail",
+        "label":"EMail",
+        "abreviation" : "EMail"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refParent" : {
+        "placeholder" : "Saisissez ici Unité Pere",
+        "tooltip" : "Saisissez ici Unité Pere",
+        "label":"Unité Pere",
+        "abreviation" : "Unité Pere"
+      },
+      "informationOn" : "Information sur Unite Organisationnelle"
+  },
+  "linkType" : {
+      "entityName": "Lien Bidirectionnel",
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refSrcToDestLink" : {
+        "placeholder" : "Saisissez ici Nom du lien source vers destination",
+        "tooltip" : "Saisissez ici Nom du lien source vers destination",
+        "label":"Nom du lien source vers destination",
+        "abreviation" : "Nom du lien source vers destination"
+      },
+      "refDestToSrcLink" : {
+        "placeholder" : "Saisissez ici Nom du lien destination vers source",
+        "tooltip" : "Saisissez ici Nom du lien destination vers source",
+        "label":"Nom du lien destination vers source",
+        "abreviation" : "Nom du lien destination vers source"
+      },
+      "refLnkNature" : {
+        "placeholder" : "Saisissez ici Nature du lien",
+        "tooltip" : "Saisissez ici Nature du lien",
+        "label":"Nature du lien",
+        "abreviation" : "Nature du lien"
+      },
+      "informationOn" : "Information sur Lien Bidirectionnel"
+  },
+  "affectation" : {
+      "entityName": "Affectation",
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refFkRole" : {
+        "placeholder" : "Saisissez ici Réf Role",
+        "tooltip" : "Saisissez ici Réf Role",
+        "label":"Réf Role",
+        "abreviation" : "Réf Role"
+      },
+      "refUorg" : {
+        "placeholder" : "Saisissez ici Réf Uorg",
+        "tooltip" : "Saisissez ici Réf Uorg",
+        "label":"Réf Uorg",
+        "abreviation" : "Réf Uorg"
+      },
+      "informationOn" : "Information sur Affectation"
+  },
+  "document" : {
+      "entityName": "Document",
+      "code" : {
+        "placeholder" : "Saisissez ici Code",
+        "tooltip" : "Saisissez ici Code",
+        "label":"Code",
+        "abreviation" : "Code"
+      },
+      "nom" : {
+        "placeholder" : "Saisissez ici Nom",
+        "tooltip" : "Saisissez ici Nom",
+        "label":"Nom",
+        "abreviation" : "Nom"
+      },
+      "criteria" : {
+        "placeholder" : "Saisissez ici Criteria",
+        "tooltip" : "Saisissez ici Criteria",
+        "label":"Criteria",
+        "abreviation" : "Criteria"
+      },
+      "type" : {
+        "placeholder" : "Saisissez ici type ",
+        "tooltip" : "Saisissez ici type ",
+        "label":"type ",
+        "abreviation" : "type "
+      },
+      "mime" : {
+        "placeholder" : "Saisissez ici type Mime",
+        "tooltip" : "Saisissez ici type Mime",
+        "label":"type Mime",
+        "abreviation" : "type Mime"
+      },
+      "sizeMin" : {
+        "placeholder" : "Saisissez ici taille minimum",
+        "tooltip" : "Saisissez ici taille minimum",
+        "label":"taille minimum",
+        "abreviation" : "taille minimum"
+      },
+      "sizeMax" : {
+        "placeholder" : "Saisissez ici taille maximum",
+        "tooltip" : "Saisissez ici taille maximum",
+        "label":"taille maximum",
+        "abreviation" : "taille maximum"
+      },
+      "idEntity" : {
+        "placeholder" : "Saisissez ici id entity",
+        "tooltip" : "Saisissez ici id entity",
+        "label":"id entity",
+        "abreviation" : "id entity"
+      },
+      "className" : {
+        "placeholder" : "Saisissez ici nom de la classe",
+        "tooltip" : "Saisissez ici nom de la classe",
+        "label":"nom de la classe",
+        "abreviation" : "nom de la classe"
+      },
+      "fileName" : {
+        "placeholder" : "Saisissez ici nom du fichier",
+        "tooltip" : "Saisissez ici nom du fichier",
+        "label":"nom du fichier",
+        "abreviation" : "nom du fichier"
+      },
+      "filePath" : {
+        "placeholder" : "Saisissez ici chemin du fichier",
+        "tooltip" : "Saisissez ici chemin du fichier",
+        "label":"chemin du fichier",
+        "abreviation" : "chemin du fichier"
+      },
+      "fileExtension" : {
+        "placeholder" : "Saisissez ici extention du fichier",
+        "tooltip" : "Saisissez ici extention du fichier",
+        "label":"extention du fichier",
+        "abreviation" : "extention du fichier"
+      },
+      "codeAttachements" : {
+        "placeholder" : "Saisissez ici codeAttachements",
+        "tooltip" : "Saisissez ici codeAttachements",
+        "label":"codeAttachements",
+        "abreviation" : "codeAttachements"
+      },
+      "dateAttachement" : {
+        "placeholder" : "Saisissez ici dateAttachement",
+        "tooltip" : "Saisissez ici dateAttachement",
+        "label":"dateAttachement",
+        "abreviation" : "dateAttachement"
+      },
+      "mandatory" : {
+        "placeholder" : "Saisissez ici mandatory",
+        "tooltip" : "Saisissez ici mandatory",
+        "label":"mandatory",
+        "abreviation" : "mandatory"
+      },
+      "provided" : {
+        "placeholder" : "Saisissez ici provided",
+        "tooltip" : "Saisissez ici provided",
+        "label":"provided",
+        "abreviation" : "provided"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "informationOn" : "Information sur Document"
+  },
+  "attachementInstance" : {
+      "entityName": "AttachementInstance",
+      "codeAttachements" : {
+        "placeholder" : "Saisissez ici codeAttachements",
+        "tooltip" : "Saisissez ici codeAttachements",
+        "label":"codeAttachements",
+        "abreviation" : "codeAttachements"
+      },
+      "dateAttachement" : {
+        "placeholder" : "Saisissez ici dateAttachement",
+        "tooltip" : "Saisissez ici dateAttachement",
+        "label":"dateAttachement",
+        "abreviation" : "dateAttachement"
+      },
+      "mandatory" : {
+        "placeholder" : "Saisissez ici mandatory",
+        "tooltip" : "Saisissez ici mandatory",
+        "label":"mandatory",
+        "abreviation" : "mandatory"
+      },
+      "provided" : {
+        "placeholder" : "Saisissez ici provided",
+        "tooltip" : "Saisissez ici provided",
+        "label":"provided",
+        "abreviation" : "provided"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "informationOn" : "Information sur AttachementInstance"
+  },
+  "linkNature" : {
+      "entityName": "LinkNature",
+      "code" : {
+        "placeholder" : "Saisissez ici code",
+        "tooltip" : "Saisissez ici code",
+        "label":"code",
+        "abreviation" : "code"
+      },
+      "name" : {
+        "placeholder" : "Saisissez ici nom",
+        "tooltip" : "Saisissez ici nom",
+        "label":"nom",
+        "abreviation" : "nom"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "informationOn" : "Information sur LinkNature"
+  },
+  "wkflog" : {
+      "entityName": "wkflog",
+      "previousStateNode" : {
+        "placeholder" : "Saisissez ici previousStateNode",
+        "tooltip" : "Saisissez ici previousStateNode",
+        "label":"previousStateNode",
+        "abreviation" : "previousStateNode"
+      },
+      "currentStateNode" : {
+        "placeholder" : "Saisissez ici currentStateNode",
+        "tooltip" : "Saisissez ici currentStateNode",
+        "label":"currentStateNode",
+        "abreviation" : "currentStateNode"
+      },
+      "instanceIdentifier" : {
+        "placeholder" : "Saisissez ici instanceIdentifier",
+        "tooltip" : "Saisissez ici instanceIdentifier",
+        "label":"instanceIdentifier",
+        "abreviation" : "instanceIdentifier"
+      },
+      "today" : {
+        "placeholder" : "Saisissez ici today",
+        "tooltip" : "Saisissez ici today",
+        "label":"today",
+        "abreviation" : "today"
+      },
+      "processName" : {
+        "placeholder" : "Saisissez ici processName",
+        "tooltip" : "Saisissez ici processName",
+        "label":"processName",
+        "abreviation" : "processName"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refUorg" : {
+        "placeholder" : "Saisissez ici Unité Orga.",
+        "tooltip" : "Saisissez ici Unité Orga.",
+        "label":"Unité Orga.",
+        "abreviation" : "Unité Orga."
+      },
+      "refUser" : {
+        "placeholder" : "Saisissez ici Utilisateur",
+        "tooltip" : "Saisissez ici Utilisateur",
+        "label":"Utilisateur",
+        "abreviation" : "Utilisateur"
+      },
+      "informationOn" : "Information sur wkflog"
+  },
+  "action" : {
+      "entityName": "Action",
+      "actionDescription" : {
+        "placeholder" : "Saisissez ici Description",
+        "tooltip" : "Saisissez ici Description",
+        "label":"Description",
+        "abreviation" : "Description"
+      },
+      "actionName" : {
+        "placeholder" : "Saisissez ici Action Name",
+        "tooltip" : "Saisissez ici Action Name",
+        "label":"Action Name",
+        "abreviation" : "Action Name"
+      },
+      "actionClassName" : {
+        "placeholder" : "Saisissez ici Action Class Name",
+        "tooltip" : "Saisissez ici Action Class Name",
+        "label":"Action Class Name",
+        "abreviation" : "Action Class Name"
+      },
+      "secure" : {
+        "placeholder" : "Saisissez ici Is secure",
+        "tooltip" : "Saisissez ici Is secure",
+        "label":"Is secure",
+        "abreviation" : "Is secure"
+      },
+      "tracable" : {
+        "placeholder" : "Saisissez ici Is tracable",
+        "tooltip" : "Saisissez ici Is tracable",
+        "label":"Is tracable",
+        "abreviation" : "Is tracable"
+      },
+      "moduleName" : {
+        "placeholder" : "Saisissez ici Module Name",
+        "tooltip" : "Saisissez ici Module Name",
+        "label":"Module Name",
+        "abreviation" : "Module Name"
+      },
+      "sousModuleName" : {
+        "placeholder" : "Saisissez ici Sous Module Name",
+        "tooltip" : "Saisissez ici Sous Module Name",
+        "label":"Sous Module Name",
+        "abreviation" : "Sous Module Name"
+      },
+      "timbre" : {
+        "placeholder" : "Saisissez ici timbre",
+        "tooltip" : "Saisissez ici timbre",
+        "label":"timbre",
+        "abreviation" : "timbre"
+      },
+      "voClassName" : {
+        "placeholder" : "Saisissez ici VO Class Name",
+        "tooltip" : "Saisissez ici VO Class Name",
+        "label":"VO Class Name",
+        "abreviation" : "VO Class Name"
+      },
+      "actionLevel" : {
+        "placeholder" : "Saisissez ici Niveau hierarchique",
+        "tooltip" : "Saisissez ici Niveau hierarchique",
+        "label":"Niveau hierarchique",
+        "abreviation" : "Niveau hierarchique"
+      },
+      "affected" : {
+        "placeholder" : "Saisissez ici Affecte",
+        "tooltip" : "Saisissez ici Affecte",
+        "label":"Affecte",
+        "abreviation" : "Affecte"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refParent" : {
+        "placeholder" : "Saisissez ici Actions Ref Parent",
+        "tooltip" : "Saisissez ici Actions Ref Parent",
+        "label":"Actions Ref Parent",
+        "abreviation" : "Actions Ref Parent"
+      },
+      "informationOn" : "Information sur Action"
+  },
+  "role" : {
+      "entityName": "Role",
+      "codeRole" : {
+        "placeholder" : "Saisissez ici Code",
+        "tooltip" : "Saisissez ici Code",
+        "label":"Code",
+        "abreviation" : "Code"
+      },
+      "libelleRole" : {
+        "placeholder" : "Saisissez ici libelle",
+        "tooltip" : "Saisissez ici libelle",
+        "label":"libelle",
+        "abreviation" : "libelle"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refsFkAction" : {
+        "placeholder" : "Saisissez ici Actions Ref",
+        "tooltip" : "Saisissez ici Actions Ref",
+        "label":"Actions Ref",
+        "abreviation" : "Actions Ref"
+      },
+      "informationOn" : "Information sur Role"
+  },
+  "utilisateur" : {
+      "entityName": "Utilisateur",
+      "login" : {
+        "placeholder" : "Saisissez ici Login",
+        "tooltip" : "Saisissez ici Login",
+        "label":"Login",
+        "abreviation" : "Login"
+      },
+      "nom" : {
+        "placeholder" : "Saisissez ici Nom",
+        "tooltip" : "Saisissez ici Nom",
+        "label":"Nom",
+        "abreviation" : "Nom"
+      },
+      "prenom" : {
+        "placeholder" : "Saisissez ici Prenom",
+        "tooltip" : "Saisissez ici Prenom",
+        "label":"Prenom",
+        "abreviation" : "Prenom"
+      },
+      "mail" : {
+        "placeholder" : "Saisissez ici Mail",
+        "tooltip" : "Saisissez ici Mail",
+        "label":"Mail",
+        "abreviation" : "Mail"
+      },
+      "motdepasse" : {
+        "placeholder" : "Saisissez ici Mot de passe",
+        "tooltip" : "Saisissez ici Mot de passe",
+        "label":"Mot de passe",
+        "abreviation" : "Mot de passe"
+      },
+      "connected" : {
+        "placeholder" : "Saisissez ici Connecté",
+        "tooltip" : "Saisissez ici Connecté",
+        "label":"Connecté",
+        "abreviation" : "Connecté"
+      },
+      "blocked" : {
+        "placeholder" : "Saisissez ici Bloqué",
+        "tooltip" : "Saisissez ici Bloqué",
+        "label":"Bloqué",
+        "abreviation" : "Bloqué"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refUniteConnectee" : {
+        "placeholder" : "Saisissez ici Unité Orga Ref",
+        "tooltip" : "Saisissez ici Unité Orga Ref",
+        "label":"Unité Orga Ref",
+        "abreviation" : "Unité Orga Ref"
+      },
+      "informationOn" : "Information sur Utilisateur"
+  },
+  "linkInstance" : {
+      "entityName": "LinkInstance",
+      "destClassName" : {
+        "placeholder" : "Saisissez ici destClassName",
+        "tooltip" : "Saisissez ici destClassName",
+        "label":"destClassName",
+        "abreviation" : "destClassName"
+      },
+      "idDest" : {
+        "placeholder" : "Saisissez ici idDest",
+        "tooltip" : "Saisissez ici idDest",
+        "label":"idDest",
+        "abreviation" : "idDest"
+      },
+      "sourceClassName" : {
+        "placeholder" : "Saisissez ici sourceClassName",
+        "tooltip" : "Saisissez ici sourceClassName",
+        "label":"sourceClassName",
+        "abreviation" : "sourceClassName"
+      },
+      "idSource" : {
+        "placeholder" : "Saisissez ici idSource",
+        "tooltip" : "Saisissez ici idSource",
+        "label":"idSource",
+        "abreviation" : "idSource"
+      },
+      "valide" : {
+        "placeholder" : "Saisissez ici valide",
+        "tooltip" : "Saisissez ici valide",
+        "label":"valide",
+        "abreviation" : "valide"
+      },
+      "traceToken" : {
+        "placeholder" : "Saisissez ici Token trace",
+        "tooltip" : "Saisissez ici Token trace",
+        "label":"Token trace",
+        "abreviation" : "Token trace"
+      },
+      "refLnkType" : {
+        "placeholder" : "Saisissez ici type de lien",
+        "tooltip" : "Saisissez ici type de lien",
+        "label":"type de lien",
+        "abreviation" : "type de lien"
+      },
+      "informationOn" : "Information sur LinkInstance"
+  },
+  "button" : {
+      "add": "Ajouter",
+      "edit": "Editer",
+      "cancelEdit": "Annuler édition",
+      "delete": "Supprimer",
+      "back": "Retour",
+      "save": "Enregistrer",
+      "create": "Créer",
+      "new": "Nouveau",
+      "cancel": "Annuler",
+      "search": "Rechercher",
+      "print": "Imprimer",
+      "view": "Détail"
+  },
+  "roles": {
+      "assignment": "Affectation des rôles"
+  },
+  "misc": {
+      "searchCriteria": "Critères de recherche",
+      "action": "Action",
+      "state": "Etat",
+      "home": "Accueil",
+      "myProfile": "Mon profil",
+      "filter": "Filtre"
+  },
+  "messages" : {
+      "required" : "Ce champ est obligatoire",
+      "minLength" : "La taille du champ n'a pas encore atteint la taille minimale",
+      "maxLength" : "Le champ a dépassé la taille maximale",
+      "email" : "Ce champ doit avoir le format d'un email",
+      "format": "Le format de ce champ est incorrect",
+      "entityCreated": "Entité créée avec succès",
+      "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter",
+      "entitySaved": "Entité mise à jour avec succès",
+      "entityDeleted": "Entité Supprimée avec succès",
+      "oneOfpasswordsNull": "Un des mot de passe saisis est null",
+      "passwordIncorrect": "Le mot de passe est incorrect",
+      "userOrPasswordIncorrect": "L'utilisateur ou le mot de passe sont incorrect",
+      "authenticationProblem": "Problème d'authentification",
+      "noMatchingPasswords": "L'ancien et le nouveau mot de passe ne correspondent pas",
+      "passwordChangeOk": "Le mot de passe a été modifié avec succès",
+      "userNotConnected": "L'utilisateur n'est pas/plus connecté ou n'est pas une implémentation de IUtilisateur",
+      "resultIsNull": "Le résultat retourné est null",
+      "noResult": "Pas de résultat retourné",
+      "useCaseIsNull": "Le Use Case retourné est null",
+      "noRootAction": "pas d'action sécurisée racine",
+      "errorExecuteAction": "Ne peut pas exécuter l'action",
+      "noAttachements": "Pas de pièces jointes",
+      "sessionCreationError": "Ne peut pas créer la session",
+      "documentRemoved": "Document removed successfully",
+      "noSecurityContext" : "Pas de contexte de sécurité",
+      "roleNotFound": "Rôle introuvable",
+      "classNotFound": "Classe introuvable",
+      "classNotInstanciable": "La classe ne peut pas être instanciée",
+      "classNameNotDefinedInWorkflow" : "La classe n'est pas définie dans le contexte de workflow",
+      "passwordsNotMatch": "L'ancien et le nouveau mot de passe ne correspondent pas",
+      "enterOldPassword": "Ancien mot de passe",
+      "enterNewPassword": "Nouveau mot de passe",
+      "confirmNewPassword": "Confirmer le nouveau mot de passe",
+      "passwordDidntChange": "Vous n'avez pas changé le mot de passe",
+      "changePassword": "Changer le mot de passe",
+      "emptyPassword": "Password non saisi",
+      "downloadYourAttachementsMessage" : "Téléchargez vos pièces jointes",
+      "attachYourAttachementsMessage" : "Envoyez vos pièces jointes"
+  },
+  "FRWK": {
+    "LOCK": {
+      "ISALREADY": {
+        "LOCKED": "Entité déjà verrouillée"
+      }
+    }
+  },
+  "PERSISTENCE_EXCEPTION" : "Problème de sauvegarde de données"
+}

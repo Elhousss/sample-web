@@ -1,0 +1,26 @@
+{
+  "name": "omni-attachements",
+  "main": [
+    "omni-attachements.module.js",
+    "omni-attachements.config.js",
+    "omni-attachements-provider.js",
+    "omni-attachements-directive.js"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.14.3",
+    "angular": "~1.5.3",
+    "angular-translate": "^2.11.0",
+    "angular-ui": "^0.4.0",
+    "ng-file-upload": "^12.0.4"
+  },
+  "_release": "ce03b33182",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ce03b33182cca37246c86916ab2f57c52eb375d4"
+  },
+  "_source": "http://10.10.1.170:10080/asebban/omni-attachements.git",
+  "_target": "*",
+  "_originalSource": "http://10.10.1.170:10080/asebban/omni-attachements.git"
+}

@@ -1,0 +1,21 @@
+.attachement {
+  display: inline-block;
+}
+
+.popover-content {
+  padding-left: 40px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 0px;
+  color: black;
+}
+
+.popover.in {
+  max-width: none;
+}
+
+.popover-title {
+  color: black;
+  font-weight: bold;
+}
+

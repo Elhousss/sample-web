@@ -1,0 +1,62 @@
+
+
+<div ng-controller="LinkInstanceController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="destClassName" name="destClassName" class="form-control col-md-6" type="text" ng-model="ctrl.linkInstance.destClassName" placeholder="{{'linkInstance.destClassName.placeholder' | translate}}">
+<input id="idDest" name="idDest" class="form-control col-md-6" type="number" ng-model="ctrl.linkInstance.idDest" placeholder="{{'linkInstance.idDest.placeholder' | translate}}">
+<input id="sourceClassName" name="sourceClassName" class="form-control col-md-6" type="text" ng-model="ctrl.linkInstance.sourceClassName" placeholder="{{'linkInstance.sourceClassName.placeholder' | translate}}">
+<input id="idSource" name="idSource" class="form-control col-md-6" type="number" ng-model="ctrl.linkInstance.idSource" placeholder="{{'linkInstance.idSource.placeholder' | translate}}">
+<input id="valide" name="valide" class="form-control col-md-6" type="checkbox" ng-model="ctrl.linkInstance.valide" placeholder="{{'linkInstance.valide.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.linkInstance.traceToken" placeholder="{{'linkInstance.traceToken.placeholder' | translate}}">
+<select class="form-control" id="refLnkType" ng-model="ctrl.linkInstance.refLnkType"
+        ng-options="item as item.id for item in ctrl.lnkTypes track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+
+
+<omni-security secured-by="1116"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.linkInstance)" translate>button.search</button></omni-security>
+<omni-security secured-by="1118"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/linkInstance/add_linkInstance" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>linkInstance.destClassName.abreviation</th>
+                    <th translate>linkInstance.idDest.abreviation</th>
+                    <th translate>linkInstance.sourceClassName.abreviation</th>
+                    <th translate>linkInstance.idSource.abreviation</th>
+                    <th translate>linkInstance.valide.abreviation</th>
+                    <th translate>linkInstance.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.linkInstances" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.destClassName}}</td>
+                <td>{{x.idDest}}</td>
+                <td>{{x.sourceClassName}}</td>
+                <td>{{x.idSource}}</td>
+                <td>{{x.valide}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1117"><a href="#/pages/admin/linkInstance/detail_linkInstance/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1119"><a href="#/pages/admin/linkInstance/edit_linkInstance/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1121"><a href="#/pages/admin/linkInstance/delete_linkInstance/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

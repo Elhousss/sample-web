@@ -1,0 +1,139 @@
+
+
+
+<div ng-controller="ActionController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="actionForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.actionDescription.$invalid}">
+						                            <label for="actionDescription" translate="action.actionDescription.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.actionDescription.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="actionDescription" name="actionDescription"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.actionDescription" placeholder="{{'action.actionDescription.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.actionDescription.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.actionDescription.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.actionName.$invalid}">
+						                            <label for="actionName" translate="action.actionName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.actionName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="actionName" name="actionName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.actionName" placeholder="{{'action.actionName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.actionName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.actionName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.actionClassName.$invalid}">
+						                            <label for="actionClassName" translate="action.actionClassName.label"></label>
+						                            <input id="actionClassName" name="actionClassName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.actionClassName" placeholder="{{'action.actionClassName.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'action.actionClassName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.actionClassName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<input type="checkbox" name="secure" id="secure" ng-model="ctrl.action.secure" ng-disabled="ctrl.disable" translate="action.secure.label"><label for="secure" translate>action.secure.label</label>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<input type="checkbox" name="tracable" id="tracable" ng-model="ctrl.action.tracable" ng-disabled="ctrl.disable" translate="action.tracable.label"><label for="tracable" translate>action.tracable.label</label>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.moduleName.$invalid}">
+						                            <label for="moduleName" translate="action.moduleName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.moduleName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="moduleName" name="moduleName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.moduleName" placeholder="{{'action.moduleName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.moduleName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.moduleName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.sousModuleName.$invalid}">
+						                            <label for="sousModuleName" translate="action.sousModuleName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.sousModuleName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="sousModuleName" name="sousModuleName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.sousModuleName" placeholder="{{'action.sousModuleName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.sousModuleName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.sousModuleName.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.timbre.$invalid}">
+						                            <label for="timbre" translate="action.timbre.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.timbre.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="timbre" name="timbre"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.timbre" placeholder="{{'action.timbre.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.timbre.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.timbre.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': actionForm.$error.$dirty && actionForm.voClassName.$invalid}">
+						                            <label for="voClassName" translate="action.voClassName.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="actionForm.voClassName.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="voClassName" name="voClassName"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.action.voClassName" placeholder="{{'action.voClassName.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'action.voClassName.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!actionForm.voClassName.$touched">
+						
+						</div></div>
+
+
+
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refParent" translate>action.refParent.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refParent" ng-model="ctrl.action.refParent"
+                                    ng-options="item as item.actionName for item in ctrl.parents track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.action.refParent.actionName}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="action.Form.refParent.$error" ng-show="action.Form.refParent.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1058"><button ng-disabled="actionForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.action)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1058"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1059"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.action.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1061"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.action.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1060"><button ng-disabled="actionForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.action)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1062"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.action.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

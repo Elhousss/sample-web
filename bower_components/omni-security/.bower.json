@@ -1,0 +1,19 @@
+{
+  "name": "omni-security",
+  "main": [
+    "omni-security.module.js",
+    "omni-security.directive.js"
+  ],
+  "dependencies": {
+    "omni-authentication": "http://10.10.1.170:10080/asebban/omni-authentication.git"
+  },
+  "_release": "d170fba101",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d170fba101dba9487a18a563cc502e7e80c25e75"
+  },
+  "_source": "http://10.10.1.170:10080/asebban/omni-security.git",
+  "_target": "*",
+  "_originalSource": "http://10.10.1.170:10080/asebban/omni-security.git"
+}

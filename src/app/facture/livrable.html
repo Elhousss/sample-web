@@ -1,0 +1,38 @@
+
+
+
+<div ng-controller="LivrableController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="livrableForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': livrableForm.$error.$dirty && livrableForm.nomLivrable.$invalid}">
+						                            <label for="nomLivrable" translate="livrable.nomLivrable.label"></label>
+						                            <input id="nomLivrable" name="nomLivrable"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.livrable.nomLivrable" placeholder="{{'livrable.nomLivrable.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'livrable.nomLivrable.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!livrableForm.nomLivrable.$touched">
+						
+						</div></div>
+
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1035"><button ng-disabled="livrableForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.livrable)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1035"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1036"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.livrable.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1038"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.livrable.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1037"><button ng-disabled="livrableForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.livrable)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1039"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.livrable.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

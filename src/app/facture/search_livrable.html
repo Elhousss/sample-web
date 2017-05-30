@@ -1,0 +1,43 @@
+
+
+<div ng-controller="LivrableController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="nomLivrable" name="nomLivrable" class="form-control col-md-6" type="text" ng-model="ctrl.livrable.nomLivrable" placeholder="{{'livrable.nomLivrable.placeholder' | translate}}">
+
+
+<omni-security secured-by="1033"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.livrable)" translate>button.search</button></omni-security>
+<omni-security secured-by="1035"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/facture/livrable/add_livrable" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>livrable.nomLivrable.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.livrables" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.nomLivrable}}</td>
+                <td>
+                    <omni-security secured-by="1034"><a href="#/pages/facture/livrable/detail_livrable/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1036"><a href="#/pages/facture/livrable/edit_livrable/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1038"><a href="#/pages/facture/livrable/delete_livrable/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,59 @@
+
+
+<div ng-controller="UtilisateurController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="login" name="login" class="form-control col-md-6" type="text" ng-model="ctrl.utilisateur.login" placeholder="{{'utilisateur.login.placeholder' | translate}}">
+<input id="nom" name="nom" class="form-control col-md-6" type="text" ng-model="ctrl.utilisateur.nom" placeholder="{{'utilisateur.nom.placeholder' | translate}}">
+<input id="prenom" name="prenom" class="form-control col-md-6" type="text" ng-model="ctrl.utilisateur.prenom" placeholder="{{'utilisateur.prenom.placeholder' | translate}}">
+<input id="mail" name="mail" class="form-control col-md-6" type="text" ng-model="ctrl.utilisateur.mail" placeholder="{{'utilisateur.mail.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.utilisateur.traceToken" placeholder="{{'utilisateur.traceToken.placeholder' | translate}}">
+<select class="form-control" id="refUniteConnectee" ng-model="ctrl.utilisateur.refUniteConnectee"
+        ng-options="item as item.nom for item in ctrl.uniteConnectees track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+
+
+<omni-security secured-by="1044"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.utilisateur)" translate>button.search</button></omni-security>
+<omni-security secured-by="1046"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/utilisateur/add_utilisateur" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>utilisateur.login.abreviation</th>
+                    <th translate>utilisateur.nom.abreviation</th>
+                    <th translate>utilisateur.prenom.abreviation</th>
+                    <th translate>utilisateur.mail.abreviation</th>
+                    <th translate>utilisateur.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.utilisateurs" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.login}}</td>
+                <td>{{x.nom}}</td>
+                <td>{{x.prenom}}</td>
+                <td>{{x.mail}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1045"><a href="#/pages/admin/utilisateur/detail_utilisateur/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1047"><a href="#/pages/admin/utilisateur/edit_utilisateur/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1049"><a href="#/pages/admin/utilisateur/delete_utilisateur/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+

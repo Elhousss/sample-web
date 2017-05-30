@@ -1,0 +1,86 @@
+
+
+
+<div ng-controller="LinkTypeController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="linkTypeForm">
+            
+
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refSrcToDestLink" translate>linkType.refSrcToDestLink.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refSrcToDestLink" ng-model="ctrl.linkType.refSrcToDestLink"
+                                    ng-options="item as item.getName() for item in ctrl.srcToDestLinks track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.linkType.refSrcToDestLink.getName()}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="linkType.Form.refSrcToDestLink.$error" ng-show="linkType.Form.refSrcToDestLink.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refDestToSrcLink" translate>linkType.refDestToSrcLink.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refDestToSrcLink" ng-model="ctrl.linkType.refDestToSrcLink"
+                                    ng-options="item as item.getName() for item in ctrl.destToSrcLinks track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.linkType.refDestToSrcLink.getName()}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="linkType.Form.refDestToSrcLink.$error" ng-show="linkType.Form.refDestToSrcLink.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refLnkNature" translate>linkType.refLnkNature.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refLnkNature" ng-model="ctrl.linkType.refLnkNature"
+                                    ng-options="item as item.id for item in ctrl.lnkNatures track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.linkType.refLnkNature.id}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="linkType.Form.refLnkNature.$error" ng-show="linkType.Form.refLnkNature.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1108"><button ng-disabled="linkTypeForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.linkType)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1108"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1109"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.linkType.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1111"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.linkType.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1110"><button ng-disabled="linkTypeForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.linkType)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1112"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.linkType.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

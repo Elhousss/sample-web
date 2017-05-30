@@ -1,0 +1,11 @@
+{
+  "name": "omni-security",
+  "version": "1.0.0",
+  "main" : [
+    "omni-security.module.js",
+  	"omni-security.directive.js"
+  ],
+  "dependencies": {
+    "omni-authentication": "http://10.10.1.170:10080/asebban/omni-authentication.git"
+  }
+}

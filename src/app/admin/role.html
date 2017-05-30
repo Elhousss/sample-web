@@ -1,0 +1,132 @@
+
+
+
+<div ng-controller="RoleController" ng-cloak>
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="roleForm">
+
+
+<div ng-if="createEnabled || saveEnabled || disable">
+						<div class="form-group" ng-class="{'has-error': roleForm.$error.$dirty && roleForm.codeRole.$invalid}">
+						                            <label for="codeRole" translate="role.codeRole.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="roleForm.codeRole.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="codeRole" name="codeRole"  class="form-control col-md-6" type="text"
+						                             ng-model="role.codeRole" placeholder="{{'role.codeRole.placeholder' | translate}}" ng-disabled="disable"  required
+						                             uib-tooltip="{{'role.codeRole.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!roleForm.codeRole.$touched">
+						
+						</div></div>
+
+<div ng-if="createEnabled || saveEnabled || disable">
+						<div class="form-group" ng-class="{'has-error': roleForm.$error.$dirty && roleForm.libelleRole.$invalid}">
+						                            <label for="libelleRole" translate="role.libelleRole.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="roleForm.libelleRole.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="libelleRole" name="libelleRole"  class="form-control col-md-6" type="text"
+						                             ng-model="role.libelleRole" placeholder="{{'role.libelleRole.placeholder' | translate}}" ng-disabled="disable"  required
+						                             uib-tooltip="{{'role.libelleRole.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!roleForm.libelleRole.$touched">
+						
+						</div></div>
+
+
+					<div ng-if="createEnabled || saveEnabled || disable">
+                        <div>
+                          <label translate>role.refsFkAction.label</label>
+                          <div ng-if="!disable">
+
+                            <multiple-autocomplete ng-model="role.refsFkAction"
+                                                 object-property="actionName"
+                                                 suggestions-arr="fkActions" required = "false">
+                            </multiple-autocomplete>
+
+                          </div>
+
+                          <div class="omnicombo" ng-if="disable" >
+                            <div ng-repeat="item in role.refsFkAction">
+                                {{item.actionName}}
+                            </div>
+                          </div>
+
+                        </div>
+                     </div>
+
+                        <!--------------->
+                        <!-- Tree View -->
+                        <!--------------->
+
+                      <div class="panel panel-default omnicontainer">
+                        <div class="panel-heading" translate>role.assignment</div>
+                        <div class="panel-body">
+                          <label for="filter" translate>misc.filter</label>
+                          <input type="text" id="filter" name="filter" ng-model="actionSearch" />
+
+                          <div
+                            ivh-treeview="tree"
+                            ivh-treeview-id-attribute="'actionId'"
+                            ivh-treeview-label-attribute="'actionName'"
+                            ivh-treeview-children-attribute="'children'"
+                            ivh-treeview-selected-attribute="'checked'"
+                            ivh-treeview-default-selected-state="false"
+                            indeterminateAttribute="indeterminate",
+                            ivh-treeview-on-cb-change="selected(ivhNode, ivhIsSelected, ivhTree)"
+                            ivh-treeview-filter="actionSearch">
+                            <script type="text/ng-template">
+                              <div title="{{trvw.label(node)}}" >
+                              <span ivh-treeview-toggle>
+                                <span ivh-treeview-twistie></span>
+                              </span>
+                              <span ng-if="trvw.useCheckboxes()" ivh-treeview-checkbox>
+                              </span>
+                              <span class="ivh-treeview-node-label">
+                                <span role-action-on-click="clicked(node)" node="node">{{trvw.label(node)}}</span>
+                              </span>
+                                <div ivh-treeview-children></div>
+                              </div>
+                            </script>
+                          </div>
+                        </div>
+                        </div>
+
+            </form>
+        </div>
+
+    <omni-security secured-by="1068">
+        <button ng-disabled="roleForm.$invalid" ng-if="createEnabled" type="button" class="btn btn-default"
+                aria-label="Left Align" ng-click="create(role)">Create
+        </button>
+    </omni-security>
+    <omni-security secured-by="1068">
+        <button ng-disabled="roleForm.$invalid" ng-if="addEnabled" type="button" class="btn btn-default" aria-label="Left Align"
+                ng-click="addAnother()">Add
+        </button>
+    </omni-security>
+    <omni-security secured-by="1069">
+        <button ng-disabled="roleForm.$invalid" ng-if="editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="edit(role.id)">
+            Edit
+        </button>
+    </omni-security>
+    <omni-security secured-by="1071">
+        <button ng-if="deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align"
+                ng-click="delete(role.id)">Delete
+        </button>
+    </omni-security>
+    <omni-security secured-by="1070">
+        <button ng-disabled="roleForm.$invalid" ng-if="saveEnabled" type="button" class="btn btn-default"
+                aria-label="Left Align" ng-click="save(role)">Save
+        </button>
+    </omni-security>
+    <omni-security secured-by="1072">
+        <button ng-if="cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align"
+                ng-click="cancelEdit(role.id)">Cancel
+        </button>
+    </omni-security>
+    <!-- back -->
+    <button ng-if="backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="back()">Back
+    </button>
+</div>
+</div>

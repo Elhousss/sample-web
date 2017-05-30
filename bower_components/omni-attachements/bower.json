@@ -1,0 +1,18 @@
+{
+  "name": "omni-attachements",
+  "version": "1.0.0",
+  "main" : [
+    "omni-attachements.module.js",
+    "omni-attachements.config.js",
+    "omni-attachements-provider.js",
+    "omni-attachements-directive.js"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.14.3",
+    "angular": "~1.5.3",
+    "angular-translate": "^2.11.0",
+    "angular-ui": "^0.4.0",
+    "ng-file-upload": "^12.0.4"
+  }
+}

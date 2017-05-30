@@ -1,0 +1,53 @@
+
+
+
+<div ng-controller="LinkController as ctrl" ng-cloak>
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+
+            <form name="linkForm">
+            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkForm.$error.$dirty && linkForm.code.$invalid}">
+						                            <label for="code" translate="link.code.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkForm.code.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="code" name="code"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.link.code" placeholder="{{'link.code.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'link.code.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkForm.code.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': linkForm.$error.$dirty && linkForm.name.$invalid}">
+						                            <label for="name" translate="link.name.label"></label>
+						                            <div role="alert">
+						                                <span class="error" ng-show="linkForm.name.$error.required" style="display: inline-block ">*</span>
+						                            </div>
+						                            <input id="name" name="name"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.link.name" placeholder="{{'link.name.placeholder' | translate}}" ng-disabled="ctrl.disable"  required
+						                             uib-tooltip="{{'link.name.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!linkForm.name.$touched">
+						
+						</div></div>
+
+            
+            
+            
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1098"><button ng-disabled="linkForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.link)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1098"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1099"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.link.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1101"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.link.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1100"><button ng-disabled="linkForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.link)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1102"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.link.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

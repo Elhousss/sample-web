@@ -1,0 +1,23 @@
+{
+  "name": "omni-workflow",
+  "main": [
+    "omni-workflow.module.js",
+    "omni-workflow-provider.js",
+    "omni-workflow-state.js",
+    "omni-workflow-transitions.js"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui": "^0.4.0"
+  },
+  "_release": "506477db54",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "506477db545fd2199f40c4c489203c5efb5fef77"
+  },
+  "_source": "http://10.10.1.170:10080/asebban/omni-workflow.git",
+  "_target": "*",
+  "_originalSource": "http://10.10.1.170:10080/asebban/omni-workflow.git"
+}

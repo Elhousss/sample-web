@@ -1,0 +1,233 @@
+
+
+
+<div ng-controller="FactureController as ctrl" ng-cloak>
+
+
+    <div ng-if="ctrl.disable">
+        <omni-workflow-state workflow-entity="ctrl.facture"></omni-workflow-state>
+        <omni-workflow-transitions workflow-entity="ctrl.facture"></omni-workflow-transitions>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            {{ctrl.toString()}}
+            <omni-attachements class="attachement" entity="ctrl.facture" disable="ctrl.disable" classname="omnishore.sample.server.facture.metier.modele.Facture"></omni-attachements>
+        </div>
+        <div class="panel-body">
+
+            <form name="factureForm">
+                <uib-tabset>
+            
+				<uib-tab heading="{{'facture.informationOn' | translate}}">
+                            <div class="form-group">            
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': factureForm.$error.$dirty && factureForm.numeroFacture.$invalid}">
+						                            <label for="numeroFacture" translate="facture.numeroFacture.label"></label>
+						                            <input id="numeroFacture" name="numeroFacture"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.facture.numeroFacture" placeholder="{{'facture.numeroFacture.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'facture.numeroFacture.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!factureForm.numeroFacture.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': factureForm.$error.$dirty && factureForm.libelleFacture.$invalid}">
+						                            <label for="libelleFacture" translate="facture.libelleFacture.label"></label>
+						                            <input id="libelleFacture" name="libelleFacture"  class="form-control col-md-6" type="text"
+						                                ng-model="ctrl.facture.libelleFacture" placeholder="{{'facture.libelleFacture.placeholder' | translate}}" ng-disabled="ctrl.disable"  >
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.disable">
+<label translate>facture.dateFacture.label</label>
+  <input ng-model="ctrl.facture.dateFacture" is-open="ctrl.dateFactureOpened" placeholder="{{'facture.dateFacture.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="false" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openDateFacture()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<label translate>facture.dateEmissionFacture.label</label>
+  <input ng-model="ctrl.facture.dateEmissionFacture" is-open="ctrl.dateEmissionFactureOpened" placeholder="{{'facture.dateEmissionFacture.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="false" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openDateEmissionFacture()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.disable">
+<label translate>facture.dateLastUpdate.label</label>
+  <input ng-model="ctrl.facture.dateLastUpdate" is-open="ctrl.dateLastUpdateOpened" placeholder="{{'facture.dateLastUpdate.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="false" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openDateLastUpdate()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<label translate>facture.dateEcheance.label</label>
+  <input ng-model="ctrl.facture.dateEcheance" is-open="ctrl.dateEcheanceOpened" placeholder="{{'facture.dateEcheance.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="false" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openDateEcheance()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div class="form-group" ng-class="{'has-error': factureForm.montantFacture.$dirty && factureForm.montantFacture.$invalid}">
+                            <label for="montantFacture" translate>facture.montantFacture.label</label>
+                           <input id="montantFacture" name="montantFacture" class="form-control col-md-6" type="number"
+                               uib-tooltip="{{'facture.montantFacture.tooltip' | translate}}"
+                               tooltip-placement="top"
+                               tooltip-trigger="mouseenter"
+                               tooltip-enable="!factureForm.montantFacture.$touched"
+                               ng-model="ctrl.facture.montantFacture" placeholder="{{'facture.montantFacture.placeholder' | translate}}" ng-disabled="ctrl.disable"  >
+                            <div ng-messages="factureForm.montantFacture.$error" ng-show="factureForm.montantFacture.$touched">
+                                <div ng-messages-include="app/common/messages/messages.html"></div>
+                            </div>
+                        </div>
+</div>
+
+<div ng-if="ctrl.saveEnabled || ctrl.disable">
+<label translate>facture.datePaiement.label</label>
+  <input ng-model="ctrl.facture.datePaiement" is-open="ctrl.datePaiementOpened" placeholder="{{'facture.datePaiement.placeholder' | translate}}" type="text" class="form-control" uib-datepicker-popup="dd-MM-yyyy" ng-required="false" ng-disabled="ctrl.disable"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="ctrl.openDatePaiement()" ng-disabled="ctrl.disable"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+</div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+<input type="checkbox" name="proformat" id="proformat" ng-model="ctrl.facture.proformat" ng-disabled="ctrl.disable" translate="facture.proformat.label"><label for="proformat" translate>facture.proformat.label</label>
+</div>
+
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <label for="refClient" translate>facture.refClient.label</label>
+                        <div class="input-group col-md-6 ibl">
+
+                          <div ng-if="!ctrl.disable">
+                            <select class="form-control" id="refClient" ng-model="ctrl.facture.refClient"
+                                    ng-options="item as item.nomClient for item in ctrl.clients track by item.id" ng-disabled="ctrl.disable">
+                            </select>
+                          </div>
+
+                          <div ng-if="ctrl.disable" class="omnicombo">
+                            {{ctrl.facture.refClient.nomClient}}<span class="caret"></span>
+                          </div>
+                          <div ng-messages="facture.Form.refClient.$error" ng-show="facture.Form.refClient.$touched">
+                              <div ng-messages-include="app/common/messages/messages.html"></div>
+                          </div>
+                        </div>
+					</div>
+
+					<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div>
+                          <label translate>facture.refsLivrable.label</label>
+                          <div ng-if="!ctrl.disable">
+
+                            <multiple-autocomplete ng-model="ctrl.facture.refsLivrable"
+                                                 object-property="nomLivrable"
+                                                 suggestions-arr="ctrl.livrables" required = "false">
+                            </multiple-autocomplete>
+
+                          </div>
+
+                          <div class="omnicombo" ng-if="ctrl.disable" >
+                            <div ng-repeat="item in ctrl.facture.refsLivrable">
+                                {{item.nomLivrable}}
+                            </div>
+                          </div>
+
+                        </div>
+                     </div>
+
+
+            
+            				</div>
+            	</uib-tab>
+            
+		 		<uib-tab heading="{{'ligneFacture.entityName' | translate}}s">
+                            <div class="form-group">
+                                <div ng-show="!ctrl.disable">
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+						<div class="form-group" ng-class="{'has-error': ligneFactureForm.$error.$dirty && ligneFactureForm.description.$invalid}">
+						                            <label for="description" translate="ligneFacture.description.label"></label>
+						                            <input id="description" name="description"  class="form-control col-md-6" type="text"
+						                             ng-model="ctrl.ligneFacture.description" placeholder="{{'ligneFacture.description.placeholder' | translate}}" ng-disabled="ctrl.disable"  
+						                             uib-tooltip="{{'ligneFacture.description.tooltip' | translate}}" tooltip-placement="top" tooltip-trigger="mouseenter" tooltip-enable="!ligneFactureForm.description.$touched">
+						
+						</div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div class="form-group" ng-class="{'has-error': ligneFactureForm.quantite.$dirty && ligneFactureForm.quantite.$invalid}">
+                            <label for="quantite" translate>ligneFacture.quantite.label</label>
+                            <input id="quantite" name="quantite" class="form-control col-md-6"
+                                uib-tooltip="{{'ligneFacture.quantite.tooltip' | translate}}"
+                                tooltip-placement="top"
+                                tooltip-trigger="mouseenter"
+                                tooltip-enable="!ligneFactureForm.quantite.$touched"
+                                type="number" ng-model="ctrl.ligneFacture.quantite" placeholder="{{'ligneFacture.quantite.placeholder' | translate}}"
+                                ng-disabled="ctrl.disable"  >
+                            <div ng-messages="ligneFactureForm.quantite.$error" ng-show="ligneFactureForm.quantite.$touched">
+                                <div ng-messages-include="app/common/messages/messages.html"></div>
+                            </div>
+                        </div></div>
+
+<div ng-if="ctrl.createEnabled || ctrl.saveEnabled || ctrl.disable">
+                        <div class="form-group" ng-class="{'has-error': ligneFactureForm.montant.$dirty && ligneFactureForm.montant.$invalid}">
+                            <label for="montant" translate>ligneFacture.montant.label</label>
+                           <input id="montant" name="montant" class="form-control col-md-6" type="number"
+                               uib-tooltip="{{'ligneFacture.montant.tooltip' | translate}}"
+                               tooltip-placement="top"
+                               tooltip-trigger="mouseenter"
+                               tooltip-enable="!ligneFactureForm.montant.$touched"
+                               ng-model="ctrl.ligneFacture.montant" placeholder="{{'ligneFacture.montant.placeholder' | translate}}" ng-disabled="ctrl.disable"  >
+                            <div ng-messages="ligneFactureForm.montant.$error" ng-show="ligneFactureForm.montant.$touched">
+                                <div ng-messages-include="app/common/messages/messages.html"></div>
+                            </div>
+                        </div>
+</div>
+
+			 					
+
+                                    <button class="btn btn-primary" ng-show="!ctrl.disable" ng-click="ctrl.addLigneFacture(ctrl.ligneFacture)" translate>button.add</button>
+                                    <button class="btn btn-default" ng-show="!ctrl.disable" ng-click="ctrl.clearLigneFacture()" translate>button.new</button>
+                                </div>
+                                <table class="table" ng-show="typeof(ctrl.facture.refsLigneFacture) != 'undefined' && ctrl.facture.refsLigneFacture != null && ctrl.facture.refsLigneFacture.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <th translate>ligneFacture.description.label</th>
+                                            <th translate>ligneFacture.quantite.label</th>
+                                            <th translate>ligneFacture.montant.label</th>
+                                            <th translate>ligneFacture.traceToken.label</th>
+                                            <th ng-show="!ctrl.disable" translate>button.delete</th>
+                                            <th ng-show="ctrl.mode == 'edit'" translate>button.edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="x in ctrl.facture.refsLigneFacture track by ctrl.ligneFactureTracker(x)">
+                                            <td>{{x.description}}</td>
+                                            <td>{{x.quantite}}</td>
+                                            <td>{{x.montant}}</td>
+                                            <td>{{x.traceToken}}</td>
+                                            <td ng-show="!ctrl.disable"><span class="glyphicon glyphicon-remove" ng-click="ctrl.removeLigneFacture(x)"></span></td>
+                                            <td ng-show="ctrl.mode == 'edit'"><span class="glyphicon glyphicon-pencil" ng-click="ctrl.editLigneFacture(x)"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+				</uib-tab>
+            
+                </uib-tabset>
+            </form>
+        </div>
+    </div>
+
+    <omni-security secured-by="1014"><button ng-disabled="factureForm.$invalid" ng-if="ctrl.createEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.create(ctrl.facture)" translate>button.create</button></omni-security>
+    <omni-security secured-by="1014"><button ng-if="ctrl.addEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.addAnother()" translate>button.add</button></omni-security>
+    <omni-security secured-by="1015"><button ng-if="ctrl.editEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.edit(ctrl.facture.id)" translate>button.edit</button></omni-security>
+    <omni-security secured-by="1017"><button ng-if="ctrl.deleteEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.delete(ctrl.facture.id)" translate>button.delete</button></omni-security>
+    <omni-security secured-by="1016"><button ng-disabled="factureForm.$invalid" ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.save(ctrl.facture)" translate>button.save</button></omni-security>
+    <omni-security secured-by="1018"><button ng-if="ctrl.cancelEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.cancelEdit(ctrl.facture.id)" translate>button.cancel</button></omni-security>
+    <!-- back -->
+    <button ng-if="ctrl.backEnabled" type="button" class="btn btn-default" aria-label="Left Align" ng-click="ctrl.back()" translate>button.back</button>
+</div>

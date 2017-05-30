@@ -1,0 +1,66 @@
+
+
+<div ng-controller="WkflogController as ctrl" class="col-md-12" ng-cloak>
+
+<h2 translate>misc.searchCriteria</h2>
+
+<input id="previousStateNode" name="previousStateNode" class="form-control col-md-6" type="text" ng-model="ctrl.wkflog.previousStateNode" placeholder="{{'wkflog.previousStateNode.placeholder' | translate}}">
+<input id="currentStateNode" name="currentStateNode" class="form-control col-md-6" type="text" ng-model="ctrl.wkflog.currentStateNode" placeholder="{{'wkflog.currentStateNode.placeholder' | translate}}">
+<input id="instanceIdentifier" name="instanceIdentifier" class="form-control col-md-6" type="text" ng-model="ctrl.wkflog.instanceIdentifier" placeholder="{{'wkflog.instanceIdentifier.placeholder' | translate}}">
+<input id="today" name="today" class="form-control col-md-6" type="date" ng-model="ctrl.wkflog.today" placeholder="{{'wkflog.today.placeholder' | translate}}">
+<input id="processName" name="processName" class="form-control col-md-6" type="text" ng-model="ctrl.wkflog.processName" placeholder="{{'wkflog.processName.placeholder' | translate}}">
+<input id="traceToken" name="traceToken" class="form-control col-md-6" type="number" ng-model="ctrl.wkflog.traceToken" placeholder="{{'wkflog.traceToken.placeholder' | translate}}">
+<select class="form-control" id="refUorg" ng-model="ctrl.wkflog.refUorg"
+        ng-options="item as item.nom for item in ctrl.uorgs track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+<select class="form-control" id="refUser" ng-model="ctrl.wkflog.refUser"
+        ng-options="item as item.login for item in ctrl.users track by item.id" ng-disabled="ctrl.disable">
+</select>
+
+
+
+<omni-security secured-by="1136"><button type="button" class="btn btn-primary" aria-label="Left Align" ng-click="ctrl.search(ctrl.wkflog)" translate>button.search</button></omni-security>
+<omni-security secured-by="1138"><button type="button" class="btn btn-default" aria-label="Left Align"><a href="#/pages/admin/wkflog/add_wkflog" translate>button.add</a></button></omni-security>
+
+    <div ng-if="ctrl.searchOK">
+        <hr>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th translate>wkflog.previousStateNode.abreviation</th>
+                    <th translate>wkflog.currentStateNode.abreviation</th>
+                    <th translate>wkflog.instanceIdentifier.abreviation</th>
+                    <th translate>wkflog.today.abreviation</th>
+                    <th translate>wkflog.processName.abreviation</th>
+                    <th translate>wkflog.traceToken.abreviation</th>
+                    <th translate>misc.action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in ctrl.wkflogs" class="gradeA {{$index%2 == 0 ? 'even':'odd'}}">
+                <td>{{x.previousStateNode}}</td>
+                <td>{{x.currentStateNode}}</td>
+                <td>{{x.instanceIdentifier}}</td>
+                <td>{{x.today | date : 'dd-MM-yyyy'}}</td>
+                <td>{{x.processName}}</td>
+                <td>{{x.traceToken}}</td>
+                <td>
+                    <omni-security secured-by="1137"><a href="#/pages/admin/wkflog/detail_wkflog/{{x.id}}"><span class="glyphicon glyphicon-search"></span></a></omni-security>
+                    <omni-security secured-by="1139"><a href="#/pages/admin/wkflog/edit_wkflog/{{x.id}}"><span class="glyphicon glyphicon-pencil"></span></a></omni-security>
+                    <omni-security secured-by="1141"><a href="#/pages/admin/wkflog/delete_wkflog/{{x.id}}"><span class="glyphicon glyphicon-remove"></span></a></omni-security>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div align="center"><uib-pagination direction-links="false" total-items="ctrl.count" ng-model="ctrl.currentPage" num-pages="ctrl.npages" ng-change="ctrl.searchPageChanged(ctrl.currentPage)"></uib-pagination></div>
+
+
+    </div>
+
+</div>
+
